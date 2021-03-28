@@ -1,5 +1,10 @@
 # Solr Mongo Importer
-Welcome to the Solr Mongo Importer project. This project provides MongoDb support for the Solr Data Import Handler.
+This is a fork project to the Solr Mongo Importer project.
+
+## Dependency
+* Mongo Java Driver (mongo-java-driver) 3.12.8
+* https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+* Solr 8.8.1
 
 ## Features
 * Retrive data from a MongoDb collection
@@ -13,6 +18,9 @@ Welcome to the Solr Mongo Importer project. This project provides MongoDb suppor
     * database (**required**) - The name of the data base you want to connect to
     * host     (*optional* - default: localhost)
     * port     (*optional* - default: 27017)
+    * source   (*optional* - the source where the user is defined)
+    * mechanism (*optional* - the authentication mechanism, GSSAPI/ MONGODB-X509/ PLAIN/ SCRAM-SHA-1/ SCRAM-SHA-256)
+    * https://docs.mongodb.com/manual/core/authentication-mechanisms/#security-authentication-mechanisms
     * username (*optional*)
     * password (*optional*)
 * MongoEntityProcessor - Use with the MongoDataSource to query a MongoDb collection
