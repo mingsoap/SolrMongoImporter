@@ -51,7 +51,16 @@ Here is a sample data-config.xml showing the use of all components
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataConfig>
-     <dataSource name="MyMongo" type="MongoDataSource" database="Inventory" />
+     <dataSource name="MyMongo"
+                type="MongoDataSource"
+                database="Inventory"
+                host="localhost"
+                source="{the source where the user is defined}"
+                mechanism="{GSSAPI|MONGODB-X509|PLAIN|SCRAM-SHA-1|SCRAM-SHA-256}"
+                username="{username}"
+                password="{password}"/>
+     <!--if deltaQuery is used, use a JSON compatitable date format for dih.last_index_time -->
+     <propertyWriter dateFormat="yyyy-MM-dd'T'HH:mm:ss.SSSX" type="SimplePropertiesWriter" />
      <document name="Products">
          <entity processor="MongoEntityProcessor"
                  query="{'Active':1}"
